@@ -14,6 +14,7 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 
 # Coming Soon:
 - Full featured drag and drop Web + Electron IDE for building the future of apps
+- Mobile IDE (React Native) for iOS, Android, etc
 - Transpiling + Build steps for truly cross platform libraries
 - Hosted solution without having to upload your Blueprints somewhere
 - Error propagation via the flow (with custom paths)
