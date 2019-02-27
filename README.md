@@ -2,6 +2,7 @@
 Frame is a flow based programming library for databases, APIs, utilities, objects, schemas and more!
 
 # Features:
+- Cross Platform - Runs everywhere Javascript does
 - Declarative style (tell the library WHAT you want, not how you want it) - [1](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2) [2](http://latentflip.com/imperative-vs-declarative) [3](https://stackoverflow.com/a/39561818) [4](https://tylermcginnis.com/imperative-vs-declarative-programming/)
 - Custom module loaders (Browserify, Webpack, RequireJS, [Github](https://github.com), [Gist](https://gist.github.com), [GunDB](https://github.com/gundb/gun), [any other module loader here])
 - Easy NodeRED-like Syntax
