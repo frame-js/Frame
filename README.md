@@ -9,6 +9,7 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 - Modes known as Blueprints are easily shareable!
 - Blueprints have an extremely easy syntax, with Schema support.
 - Optional Shared resources built right in! (New flows don't need multiple connections, etc)
+- Functions have a lot of freedom, they can use return values, Promises, async/await, or use the callback. It gets out of your preferred way/style of coding
 
 <br>
 
@@ -56,7 +57,7 @@ Message
 // Example #1: Multiple event handlers (Left to right processing.)
 Message
   .from(Slack)
-  .from(Gitter) // Detect .from (pipeStart) already exists, create a new pipe path.
+  .from(Gitter)
   .to(Console)
 
 // Example #2: (Right to left processing.)
@@ -73,5 +74,34 @@ Message
 ```
 
 <br>
+
+### Blueprint Example: ###
+
+```
+Frame.Blueprint = {
+  name: 'Console',
+
+  in: function(data) {
+    return console.log(data)
+  },
+}
+```
+
+### Functional Programming: ###
+
+```
+function registerGunMessage(callback) {
+    gun.get(“app”).get(“users”).on(callback)
+}
+
+Gun.from(registerGunMessage).to(Console)
+```
+
+### Multiple flow paths (Coming soon): ###
+
+```
+Message.from(Gun).to(Schema).or.to(Error)
+```
+
 
 # More Examples coming soon! #
