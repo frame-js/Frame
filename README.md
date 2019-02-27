@@ -7,7 +7,7 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 - Easy NodeRED-like Syntax
 - Modes known as Blueprints are easily shareable!
 - Blueprints have an extremely easy syntax, with Schema support.
-- Shared resources built right in! (New flows don't need multiple connections, etc)
+- Opt-In Shared resources built right in! (New flows don't need multiple connections, etc)
 
 <br>
 
