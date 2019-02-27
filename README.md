@@ -22,10 +22,17 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 ## Custom Loaders ##
 
 ```
-const SomeBlueprint = Frame("git://pathToYourFile.js") // From Github files
-const SomeBlueprintFromRepo = Frame("git://SomeOrganization/YourFavoriteRepo") // From Github repos
-const BlueprintFromURL = Frame("http://example.com/yourFile.js") // From HTTP URLs
-const BlueprintFromDB = Frame("mongodb://fileInDb.js") // From many different databases and stores
+// From Github files
+const SomeBlueprint = Frame("git://pathToYourFile.js")
+
+// From Github repos
+const SomeBlueprintFromRepo = Frame("git://SomeOrganization/YourFavoriteRepo")
+
+// From HTTP URLs
+const BlueprintFromURL = Frame("http://example.com/yourFile.js")
+
+// From many different databases and stores
+const BlueprintFromDB = Frame("mongodb://fileInDb.js")
 ```
 
 ## Easy syntax ##
