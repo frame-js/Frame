@@ -6,10 +6,10 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 - Declarative style (tell the library WHAT you want, not how you want it) - [1](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2) [2](http://latentflip.com/imperative-vs-declarative) [3](https://stackoverflow.com/a/39561818) [4](https://tylermcginnis.com/imperative-vs-declarative-programming/)
 - Custom module loaders (Browserify, Webpack, RequireJS, [Github](https://github.com), [Gist](https://gist.github.com), [GunDB](https://github.com/gundb/gun), [any other module loader here])
 - Easy NodeRED-like Syntax
-- Modes known as Blueprints are easily shareable!
+- Modules known as Blueprints are easily shareable!
 - Blueprints have an extremely easy syntax, with Schema support.
 - Optional Shared resources built right in! (New flows don't need multiple connections, etc)
-- Functions have a lot of freedom, they can use return values, Promises, async/await, or use the callback. It gets out of your preferred way/style of coding
+- Functions have a lot of freedom, they can use return values, Promises, async/await, or use the callback. It gets out of your preferred way/style of coding.
 
 <br>
 
@@ -17,8 +17,8 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 - Full featured drag and drop Web + Electron IDE for building the future of apps
 - Mobile IDE (React Native) for iOS, Android, etc
 - Transpiling + Build steps for truly cross platform libraries
-- Hosted solution without having to upload your Blueprints somewhere
-- Error propagation via the flow (with custom paths)
+- Hosted solution without having to upload your Blueprints somewhere (along with transpiling configurations)
+- Error propagation via the flow (with custom paths), without falling over
 
 <br>
 
@@ -103,5 +103,19 @@ Gun.from(registerGunMessage).to(Console)
 Message.from(Gun).to(Schema).or.to(Error)
 ```
 
+### Fallback support for API, Databases, etc: ###
+
+```
+Message
+  .from(Socket)
+  .to(DB1)
+  .or() // call it like a function
+  .to(DB2)
+  .or // can also be used with dot notation
+  .to(DB3)
+  .or
+  .to(Sentry)
+  .timeout(5000) // Timeouts for any of the Blueprints!
+```
 
 # More Examples coming soon! #
