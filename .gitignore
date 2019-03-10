@@ -137,5 +137,12 @@ typings/
 
 backup/*
 notes/*
-blueprints/*
 playground/*
+
+# Ignore blueprints monorepo, except for embedded loaders
+blueprints/*/*
+!blueprints/loaders/http.js
+!blueprints/loaders/file.js
+
+# We also want built-ins to be allowed
+!blueprints/**.js
