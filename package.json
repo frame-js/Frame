@@ -1,0 +1,54 @@
+{
+  "name": "frame",
+  "version": "1.0.0",
+  "description": "Frame is a flow based programming library for databases, APIs, utilities, objects, schemas and more!",
+  "main": "build/frame.js",
+  "directories": {
+    "example": "examples",
+    "blueprints": "blueprints"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "./node_modules/.bin/rollup -c config/rollup.config.js --environment build:production",
+    "prepublish": "npm run build",
+    "dev": "./node_modules/.bin/rollup -c config/rollup.config.js -w --environment build:dev"
+  },
+  "keywords": [
+    "Frame",
+    "Blueprint",
+    "ORM",
+    "library",
+    "flow",
+    "flow control",
+    "flow based programming",
+    "database",
+    "databases",
+    "API",
+    "utility",
+    "utilities",
+    "schema",
+    "schemas",
+    "object",
+    "objects",
+    "chainable",
+    "monad",
+    "bootstrap",
+    "turn based",
+    "turn based programming",
+    "microcosm",
+    "declarative",
+    "javascript"
+  ],
+  "author": "Levi Roberts",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-plugin-async-await": "^0.0.0",
+    "rollup": "^1.2.3",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-gzip": "^2.2.0",
+    "rollup-plugin-terser": "^4.0.4"
+  }
+}
