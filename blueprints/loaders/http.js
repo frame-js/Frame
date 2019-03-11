@@ -1,5 +1,6 @@
 import log from '../../lib/logger'
 import Module from '../../lib/ModuleLoader'
+import exporter from '../../lib/exports'
 
 // Embedded http loader blueprint.
 const httpLoader = {
@@ -124,6 +125,6 @@ const httpLoader = {
   },
 }
 
-window.http = httpLoader // TODO: Cleanup, expose modules instead
+exporter('http', httpLoader) // TODO: Cleanup, expose modules instead
 
 export default httpLoader
