@@ -32,6 +32,9 @@ const fileLoader = {
       const filePath = this.normalizeFilePath(fileName)
 
       const file = this.resolveFile(filePath)
+      if (!file)
+        return callback('Blueprint not found')
+
       const fileContents = fs.readFileSync(file).toString()
 
       const sandbox = { Blueprint: null }
@@ -46,14 +49,25 @@ const fileLoader = {
       return path.resolve(process.cwd(), '../blueprints/', fileName)
     },
 
-    resolveFile: function(file) {
+    resolveFile: function(filePath) {
       const fs = require('fs')
-      let filePath = file + ((file.indexOf('.js') === -1) ? '.js' : '')
+      const path = require('path')
 
-      if (fs.statSync(filePath).isDirectory())
-        return filePath = path.resolve(file, '/index.js')
+      // If file or directory exists
+      if (fs.existsSync(filePath)) {
+        // Check if blueprint is a directory first
+        if (fs.statSync(filePath).isDirectory())
+          return path.resolve(filePath, 'index.js')
+        else
+          return filePath + ((filePath.indexOf('.js') === -1) ? '.js' : '')
+      }
 
-      return filePath
+      // Try adding an extension to see if it exists
+      const file = filePath + ((filePath.indexOf('.js') === -1) ? '.js' : '')
+      if (fs.existsSync(file))
+        return file
+
+      return false
     }
   },
 }
