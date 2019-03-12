@@ -40,10 +40,10 @@ const httpLoader = {
         const filePath = this.normalizeFilePath(fileName)
         log('[http loader] Loading file: ' + filePath)
 
-        var async = true
+        var isAsync = true
         var syncFile = null
         if (!callback) {
-          async = false
+          isAsync = false
           callback = function(err, file) {
             if (err)
               throw new Error(err)
@@ -60,7 +60,7 @@ const httpLoader = {
         scriptRequest.addEventListener('load', scriptEvents.onLoad)
         scriptRequest.addEventListener('error', scriptEvents.onError)
 
-        scriptRequest.open('GET', filePath, async)
+        scriptRequest.open('GET', filePath, isAsync)
         scriptRequest.send(null)
 
         return syncFile
