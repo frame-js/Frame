@@ -46,7 +46,7 @@ const fileLoader = {
 
     normalizeFilePath: function(fileName) {
       const path = require('path')
-      return path.resolve(process.cwd(), '../blueprints/', fileName)
+      return path.resolve(process.cwd(), 'blueprints/', fileName)
     },
 
     resolveFile: function(filePath) {
