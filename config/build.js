@@ -1,5 +1,5 @@
 // Rollup plugins
-import { eslint } from 'rollup-plugin-eslint'
+//import { eslint } from 'rollup-plugin-eslint'
 import filesize from 'rollup-plugin-filesize'
 
 function onwarn(warning) {
@@ -24,7 +24,7 @@ export default {
   },
 
   plugins: [
-    eslint('config/dev.eslintrc.js'),
+    //eslint('config/dev.eslintrc.js'),
     filesize({ showMinifiedSize: false }),
   ],
 }
