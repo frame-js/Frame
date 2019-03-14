@@ -71,7 +71,7 @@ const fileLoader = {
         return file
 
       return false
-    }
+    },
   },
 }
 
