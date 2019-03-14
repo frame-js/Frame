@@ -8,8 +8,8 @@ Frame is a flow based programming library for databases, APIs, utilities, object
 - Easy NodeRED-like Syntax
 - Modules known as Blueprints are easily shareable!
 - Blueprints have an extremely easy syntax, with Schema support.
-- Optional Shared resources built right in! (New flows don't need multiple connections, etc)
-- Functions have a lot of freedom, they can use return values, Promises, async/await, or use the callback. It gets out of your preferred way/style of coding.
+- Singletons offer optional Shared resources built right in! (New flows don't need multiple connections, etc)
+- Functions have a lot of freedom, they can use return values, Promises, async/await, or use the callback. Frame gets out of your preferred way/style of coding.
 
 <br>
 
@@ -75,10 +75,10 @@ Message
 
 <br>
 
-### Blueprint Example: ###
+### Blueprint.js Example: ###
 
 ```
-Frame.Blueprint = {
+Blueprint = {
   name: 'Console',
 
   in: function(data) {
@@ -90,8 +90,8 @@ Frame.Blueprint = {
 ### Functional Programming: ###
 
 ```
-function registerGunMessage(callback) {
-    gun.get(“app”).get(“users”).on(callback)
+function registerGunMessage() {
+    gun.get(“app”).get(“users”).on(this.out)
 }
 
 Gun.from(registerGunMessage).to(Console)
@@ -116,6 +116,55 @@ Message
   .or
   .to(Sentry)
   .timeout(5000) // Timeouts for any of the Blueprints!
+```
+
+### Property Descriptions for automatic destructuring: ###
+```
+Blueprint = {
+  describe: {
+    in: {
+      firstPropName: 'Some property desscription.',
+      secPropName: 'Some other prop description.',
+    }
+  }
+
+  in: function(data, props) {
+    // props.firstPropName
+    // props.secPropName
+  }
+}
+```
+
+### Multiple return styles: ###
+```
+Blueprint = {
+  // Callback style - follows (err, data) callback convention
+  in: function(data, props, callback) {
+    callback(null, 'some data')
+  },
+
+  // return primitives
+  in: function(data, props) {
+    return 'some data'
+  },
+  
+  // return promises
+  in: function(data) {
+    return new Promise(function(resolve, reject) {
+      resolve('some data')
+    })
+  },
+  
+  // async/await
+  in: async function(data) {
+    return await someAsyncFunction()
+  },
+  
+  // Out event
+  in: function(data) {
+    this.out('some data')
+  },
+}
 ```
 
 # More Examples coming soon! #
