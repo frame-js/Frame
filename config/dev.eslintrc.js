@@ -98,6 +98,7 @@ module.exports = {
     'semi': ['warn', 'never'], // Disallow the use of semicolons
     'no-extra-semi': 'off', // Use of semicolons is already disallowed
     'no-func-assign': 'warn', // Disallow reassigning function declarations
+    'no-param-reassign': 'warn', // Disallow reassigning function paramaters (mutation)
 
     'no-console': 'warn', // Allow the use of console.log since we work in nodejs
     'camelcase': 'warn', // Disallow underscores in variable names except for example: _beforeString or SOME_ERROR
