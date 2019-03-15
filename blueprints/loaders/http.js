@@ -30,9 +30,9 @@ const httpLoader = {
       if (fileName.indexOf('http') >= 0)
         return fileName
 
-      let file = fileName + ((fileName.indexOf('.js') === -1) ? '.js' : '')
-      file = 'blueprints/' + file
-      return file
+      const file = fileName + ((fileName.indexOf('.js') === -1) ? '.js' : '')
+      const filePath = 'blueprints/' + file
+      return filePath
     },
 
     browser: {

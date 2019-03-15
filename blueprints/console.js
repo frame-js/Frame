@@ -4,6 +4,6 @@ Blueprint = {
   name: 'Console',
 
   in: function(data) {
-    return console.log(data)
+    return console.log('Console:', data)
   },
 }
