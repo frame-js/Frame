@@ -1,5 +1,6 @@
 // Rollup plugins
 import cleanup from 'rollup-plugin-cleanup'
+import strip from 'rollup-plugin-strip'
 import { terser } from 'rollup-plugin-terser'
 import filesize from 'rollup-plugin-filesize'
 import gzipPlugin from 'rollup-plugin-gzip'
@@ -27,6 +28,9 @@ export default {
 
   plugins: [
     cleanup(),
+    strip({
+      functions: ['log.debug'],
+    }),
     terser(),
     filesize({ showMinifiedSize: false }),
     gzipPlugin(),

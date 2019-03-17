@@ -21,7 +21,7 @@ const fileLoader = {
       if (this.isBrowser)
         throw new Error('File:// loading within browser not supported yet. Try relative URL instead.')
 
-      log('[file loader] Loading file: ' + fileName)
+      log.debug('[file loader] Loading file: ' + fileName)
 
       // TODO: Switch to async file loading, improve require(), pass in IIFE to sandbox, use IIFE resolver for callback
       // TODO: Add error reporting.

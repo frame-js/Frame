@@ -11,7 +11,7 @@ export default {
   onwarn,
   input: 'lib/index.js',
   output: {
-    file: 'build/frame.js',
+    file: 'build/frame.dev.js',
     format: 'iife',
 
     exports: 'none',

@@ -38,7 +38,7 @@ const httpLoader = {
     browser: {
       load: function(fileName, callback) {
         const filePath = this.normalizeFilePath(fileName)
-        log('[http loader] Loading file: ' + filePath)
+        log.debug('[http loader] Loading file: ' + filePath)
 
         var isAsync = true
         var syncFile = null

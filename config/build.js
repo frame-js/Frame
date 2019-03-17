@@ -1,6 +1,7 @@
 // Rollup plugins
 //import { eslint } from 'rollup-plugin-eslint'
 import filesize from 'rollup-plugin-filesize'
+import strip from 'rollup-plugin-strip'
 
 function onwarn(warning) {
   if (warning.code !== 'CIRCULAR_DEPENDENCY') {
@@ -25,6 +26,9 @@ export default {
 
   plugins: [
     //eslint('config/dev.eslintrc.js'),
+    strip({
+      functions: ['log.debug'],
+    }),
     filesize({ showMinifiedSize: false }),
   ],
 }
