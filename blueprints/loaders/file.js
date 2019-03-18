@@ -37,14 +37,16 @@ const fileLoader = {
 
       const fileContents = fs.readFileSync(file).toString()
 
-      //const sandbox = { Blueprint: null }
-      //vm.createContext(sandbox)
-      //vm.runInContext(fileContents, sandbox)
+      // TODO: Create a more complete sandbox object
+      const sandbox = {
+        Blueprint: null,
+        require: require,
+        console: { log: log, error: log.error, warn: log.warn }
+      }
 
-      global.Blueprint = null
-      vm.runInThisContext(fileContents)
-
-      callback(null, global.Blueprint)
+      vm.createContext(sandbox)
+      vm.runInContext(fileContents, sandbox)
+      callback(null, sandbox.Blueprint)
     },
 
     normalizeFilePath: function(fileName) {
