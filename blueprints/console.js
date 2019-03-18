@@ -3,8 +3,8 @@
 Blueprint = {
   name: 'Console',
 
-  in: function(data) {
-    console.log('Console:', data)
+  in: function(data, props) {
+    console.log('Console:', data, ':', props)
     this.out(data)
   },
 }
