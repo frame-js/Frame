@@ -19,11 +19,11 @@ const httpLoader = {
       this.isBrowser = (typeof window === 'object') ? true : false
     },
 
-    in: function(fileName, opts, callback) {
+    in: function(fileName, opts, callback, skipNormalization) {
       if (!this.isBrowser)
         return callback('URL loading with node.js not supported yet (Coming soon!).')
 
-      return this.browser.load.call(this, fileName, callback)
+      return this.browser.load.call(this, fileName, callback, skipNormalization)
     },
 
     normalizeFilePath: function(fileName) {
@@ -36,8 +36,8 @@ const httpLoader = {
     },
 
     browser: {
-      load: function(fileName, callback) {
-        const filePath = this.normalizeFilePath(fileName)
+      load: function(fileName, callback, skipNormalization) {
+        const filePath = (!skipNormalization) ? this.normalizeFilePath(fileName) : fileName
         log.debug('[http loader] Loading file: ' + filePath)
 
         var isAsync = true
