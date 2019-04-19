@@ -40,8 +40,11 @@ const fileLoader = {
       // TODO: Create a more complete sandbox object
       const sandbox = {
         Blueprint: null,
-        require: require,
-        console: { log: log, error: log.error, warn: log.warn }
+        require: function(moduleFile) { return require(filePath + '/node_modules/' + moduleFile) },
+        console: { log: log, error: log.error, warn: log.warn, info: log.info },
+        global: global,
+        module: module,
+        __dirname: filePath,
       }
 
       vm.createContext(sandbox)
