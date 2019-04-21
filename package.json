@@ -1,17 +1,17 @@
 {
-  "name": "frame",
+  "name": "@frame-js/frame",
   "version": "1.0.0",
   "description": "Frame is a flow based programming library for databases, APIs, utilities, objects, schemas and more!",
   "main": "build/frame.js",
   "directories": {
     "example": "examples",
-    "blueprints": "blueprints"
+    "lib": "lib"
   },
   "scripts": {
     "test": "mocha",
-    "build": "./node_modules/.bin/rollup -c config/rollup.config.js --environment build:production",
+    "build": "rollup -c config/rollup.config.js --environment build:production",
     "prepublish": "npm run build",
-    "dev": "./node_modules/.bin/rollup -c config/rollup.config.js -w --environment build:dev"
+    "dev": "rollup -c config/rollup.config.js -w --environment build:dev"
   },
   "keywords": [
     "Frame",
@@ -51,5 +51,14 @@
     "rollup-plugin-gzip": "^2.2.0",
     "rollup-plugin-strip": "^1.2.1",
     "rollup-plugin-terser": "^4.0.4"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frame-js/Frame.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frame-js/Frame/issues"
+  },
+  "homepage": "https://github.com/frame-js/Frame#readme"
 }
