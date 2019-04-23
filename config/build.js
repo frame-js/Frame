@@ -27,7 +27,7 @@ export default {
   plugins: [
     //eslint('config/dev.eslintrc.js'),
     strip({
-      functions: ['log.debug'],
+      functions: ['log.debug', 'log.error'],
     }),
     filesize({ showMinifiedSize: false }),
   ],
