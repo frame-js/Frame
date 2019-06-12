@@ -42,12 +42,12 @@
   "author": "Levi Roberts",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-plugin-async-await": "^0.0.0",
-    "rollup": "^1.2.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "rollup": "^1.15.1",
     "rollup-plugin-cleanup": "^3.1.1",
-    "rollup-plugin-eslint": "^5.0.0",
-    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-gzip": "^2.2.0",
     "rollup-plugin-strip": "^1.2.1",
     "rollup-plugin-terser": "^4.0.4"
