@@ -75,6 +75,24 @@ Message
 
 <br>
 
+## Using setters to chain to/from: ##
+
+```
+// Can be a function
+Message.from = function(data, props, cb) {}
+
+// Can be an arrow function
+Message.from = (data, _, cb) => cb()
+
+// Can be a Blueprint module
+Message.from = Slack
+
+// Can be a primitive value
+Message.from = 'Something'
+```
+
+<br>
+
 ### Blueprint.js Example: ###
 
 ```
