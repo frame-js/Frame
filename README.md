@@ -1,3 +1,12 @@
+# This project has moved to [FlowJS](https://github.com/NuFlow/FlowJS) 
+
+# Why the move?
+The code has been dranatically simplified and easier to reason about. Rather than trying to solve too many problems (like dynamic imports), it leaves these to your builder or toolchain of choice (New ES6 Imports can do this for you). <br>
+<br>
+**Instead, we now focus solely on Code Flow Control.**
+
+---
+
 # Frame
 Frame is a flow based programming library for databases, APIs, utilities, objects, schemas and more!
 
